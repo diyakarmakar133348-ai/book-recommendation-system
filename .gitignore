@@ -1,0 +1,6 @@
+models/
+*.pkl
+*.pickle
+data/*.csv
+venv/
+__pycache__/

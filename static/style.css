@@ -1,0 +1,39 @@
+body {
+    background: #0f0f1a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #18182a !important;
+    border: 1px solid #2a2a4a !important;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 193, 7, 0.15) !important;
+    border-color: #ffc107 !important;
+}
+
+.navbar-brand i {
+    color: #ffc107;
+}
+
+.form-control:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+}
+
+.btn-warning {
+    color: #0f0f1a !important;
+    font-weight: 600;
+}
+
+.form-check-input:checked {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.form-check-label {
+    color: #cdcdcd;
+}

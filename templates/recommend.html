@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="text-light"><i class="bi bi-star-fill text-warning"></i> Top Picks for <span class="text-warning">User {{ user_id }}</span></h2>
+    <a href="/" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Go Back</a>
+</div>
+<hr class="text-secondary">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    {% for book in books %}
+    <div class="col">
+        <div class="card h-100 bg-dark text-light border-secondary shadow-sm hover-effect">
+            <img src="{{ book.image_url }}" 
+     class="card-img-top" alt="{{ book.title }}" 
+     style="height: 300px; object-fit: cover; border-bottom: 2px solid #ffc107;"
+     onerror="this.onerror=null; this.src='https://via.placeholder.com/150x220/1a1a2e/ffffff?text=No+Cover';">
+            <div class="card-body">
+                <h5 class="card-title text-truncate">{{ book.title }}</h5>
+                <p class="card-text text-secondary small">{{ book.authors[:30] }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill"></i> {{ book.average_rating|round(1) }}</span>
+                    <span class="badge bg-info text-dark">Score: {{ book.hybrid_score }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

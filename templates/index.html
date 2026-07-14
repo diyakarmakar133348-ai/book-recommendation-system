@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card shadow-lg border-0 rounded-4 p-4 text-center" style="background: #1e1e2f; color: white;">
+            <div class="card-body">
+                <h1 class="display-4 fw-bold mb-3"><i class="bi bi-stars text-warning"></i> Find Your Next Read</h1>
+                <p class="lead mb-4">Enter your User ID to get personalized book recommendations powered by AI.</p>
+                <form action="/recommend" method="POST">
+                    <div class="input-group input-group-lg mb-3">
+                        <span class="input-group-text bg-secondary text-white"><i class="bi bi-person"></i></span>
+                        <input type="number" class="form-control" name="user_id" placeholder="Enter User ID (e.g., 1, 2, 3...)" required>
+                        <button class="btn btn-warning fw-bold" type="submit">Recommend <i class="bi bi-arrow-right"></i></button>
+                    </div>
+                </form>
+                <p class="text-secondary small">* New user? We'll ask your favorite genres!</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
